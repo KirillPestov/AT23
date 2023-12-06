@@ -1,3 +1,4 @@
+package ru.netology;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -32,7 +33,7 @@ public class SuccessfulTest {
     public void successfulRequest() {
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=`name`] input")).sendKeys("Петров Петр");
-        driver.findElement(By.cssSelector("[data-test-id=`phone`] input")).sendKeys("89080008800");
+        driver.findElement(By.cssSelector("[data-test-id=`phone`] input")).sendKeys("+79080008800");
         driver.findElement(By.cssSelector("[data-test-id=`agreement`]")).click();
         driver.findElement(By.cssSelector("button.button")).click();
         var actualText = driver.findElement(By.cssSelector("[data-test-id=order success]")).getText().trim();
