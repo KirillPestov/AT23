@@ -31,13 +31,12 @@ public class SuccessfulTest {
     }
     @Test
     public void successfulRequest() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=`name`] input")).sendKeys("Петров Петр");
         driver.findElement(By.cssSelector("[data-test-id=`phone`] input")).sendKeys("+79080008800");
         driver.findElement(By.cssSelector("[data-test-id=`agreement`]")).click();
         driver.findElement(By.cssSelector("button.button")).click();
         var actualText = driver.findElement(By.cssSelector("[data-test-id=order success]")).getText().trim();
-        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.",actualText);
+        assertEquals(" Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.",actualText);
 
     }
 
